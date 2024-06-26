@@ -1,16 +1,12 @@
-# data_visualizer.py
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Set the title of the app
 st.title("Data Visualizer")
 
-# Sidebar for user inputs
 st.sidebar.header("Upload Your Dataset")
 
-# Function to load dataset
 def load_data():
     uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
     if uploaded_file is not None:
@@ -20,7 +16,6 @@ def load_data():
         st.sidebar.warning("Please upload a CSV file.")
         return None
 
-# Function to create plot
 def create_plot(data, plot_type, x_var, y_var, color_var, size_var, title, xlabel, ylabel):
     plt.figure(figsize=(10, 6))
     
